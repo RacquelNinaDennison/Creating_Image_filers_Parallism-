@@ -43,13 +43,13 @@ public class MeanFilterSerial {
         int maxWidth = 0;
         File imageFile; // args[0]
         BufferedImage image = null;
-        int sliderVariable = 3; // args[2]
+        int sliderVariable = 9; // args[2]
         int radius = sliderVariable / 2;
         BufferedImage image2 = null; // args[1]
 
         try {
             // set all the variabls of the file
-            imageFile = new File("noisy.png"); // TODO jpg
+            imageFile = new File("example.jpg"); // TODO jpg
             image = ImageIO.read(imageFile);
             // getting the dimensions of the image
             maxHeight = image.getHeight();
@@ -63,8 +63,8 @@ public class MeanFilterSerial {
         }
         // TODO Fix the looping variables
 
-        for (int x = radius; x < maxWidth - radius; x++) {
-            for (int y = radius; y < maxHeight - radius; y++) {
+        for (int x = radius; x < maxWidth - radius; ++x) {
+            for (int y = radius; y < maxHeight - radius; ++y) {
                 // call an average method
                 image2.setRGB(x, y, average(x, y, image, radius));
             }
