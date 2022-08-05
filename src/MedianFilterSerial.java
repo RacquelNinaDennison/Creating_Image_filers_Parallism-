@@ -14,7 +14,9 @@ import javax.swing.*;
 public class MedianFilterSerial {
 
     // methods
-
+    /*
+     * 
+     */
     public static int average(int x, int y, BufferedImage image, int radius) {
         // making list arrays; maybe less dynamic
         ArrayList<Integer> redPixels = new ArrayList<>();
