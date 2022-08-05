@@ -59,7 +59,7 @@ public class MeanFilterSerial {
 
         // }
         // }
-
+        // TODO Fix the looping variables
         for (int v = stoppingVariable; v < maxHeight - stoppingVariable; v++) {
             for (int u = stoppingVariable; u < maxWidth - stoppingVariable; u++) {
                 for (int p = v - stoppingVariable; p < kernelHeight; p++) {
@@ -84,7 +84,7 @@ public class MeanFilterSerial {
 
             }
         }
-
+        // TODO see how to insert the image
         // re-inserting the image
 
         // BufferedImage theImage = new BufferedImage(
@@ -100,6 +100,8 @@ public class MeanFilterSerial {
         // }
 
         // File outputfile = new File("task1output3x3.png");
+
+        // TODO- maybe just writing to the thing will work
         // ImageIO.write(theImage, "png", outputfile);
     }
 }
