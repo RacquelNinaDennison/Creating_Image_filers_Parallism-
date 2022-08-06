@@ -17,23 +17,52 @@ public class MeanFilterParallel extends RecursiveAction {
     static int maxWidth = 0;
     static File imageFile; // args[0]
     static BufferedImage image = null;
-    static int sliderVariable = 9; // args[2]
+    static int sliderVariable; // args[2]
     static int radius = sliderVariable / 2;
     static BufferedImage image2 = null; // args[1]
+    protected static int sThreshold = 100000;
 
-    public MeanFilterParallel() {
+    // constructor method
+    public MeanFilterParallel(BufferedImage startImage, int height, int width, BufferedImage destinationImage) {
+        image = startImage;
+        image2 = destinationImage;
+        maxHeight = height;
+        maxWidth = width;
 
     }
 
-    public void compute() {
+    protected void computeDirectly() {
+        for (int x = radius; x < maxWidth - radius; ++x) {
+            for (int y = radius; y < maxHeight - radius; ++y) {
+                // call an average method
+                image2.setRGB(x, y, average(x, y, image, radius));
+            }
 
+        }
+    }
+
+    protected void compute() {
+        if (maxWidth < sThreshold) {
+            computeDirectly();
+            return;
+        }
+
+        int split = maxWidth / 2;
+        if (split == 0) {
+            computeDirectly();
+            return;
+        }
+
+        invokeAll(new MeanFilterParallel(image, maxHeight, split, image2),
+                new MeanFilterParallel(image, maxHeight + split, maxWidth - split,
+                        image2));
     }
 
     // main class
     public static void main(String[] args) throws IOException {
         try {
             // set all the variabls of the file
-            imageFile = new File("example.jpg"); // TODO jpg
+            imageFile = new File("example.jpg"); // TODO change it to the args
             image = ImageIO.read(imageFile);
             // getting the dimensions of the image
             maxHeight = image.getHeight();
@@ -47,10 +76,28 @@ public class MeanFilterParallel extends RecursiveAction {
         }
         // TODO Fix the looping variables
         // this will be done once all the threads are done
+        int processors = Runtime.getRuntime().availableProcessors();
+        System.out.println(Integer.toString(processors) + " processor"
+                + (processors != 1 ? "s are " : " is ")
+                + "available");
+
+        MeanFilterParallel fb = new MeanFilterParallel(image, maxHeight, maxWidth, image2);
+
+        ForkJoinPool pool = new ForkJoinPool();
+
+        long startTime = System.currentTimeMillis();
+        pool.invoke(fb);
+        long endTime = System.currentTimeMillis();
+
+        System.out.println("Image blur took " + (endTime - startTime) +
+                " milliseconds.");
+
+        System.out.println("Writing to file");
         File outputfile = new File("task1output3x3.png");
 
         // TODO- maybe just writing to the thing will work
         ImageIO.write(image2, "jpg", outputfile);
+        System.out.println("Image done ");
 
     }
 
