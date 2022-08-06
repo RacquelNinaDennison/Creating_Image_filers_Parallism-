@@ -13,27 +13,26 @@ import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveAction;
 
 public class MeanFilterParallel extends RecursiveAction {
-    static int maxHeight = 0;
-    static int maxWidth = 0;
+    int height;
+    int width;
     static File imageFile; // args[0]
-    static BufferedImage image = null;
+    static BufferedImage image = null; // buffered image to send to
     static int sliderVariable; // args[2]
     static int radius = sliderVariable / 2;
     static BufferedImage image2 = null; // args[1]
-    protected static int sThreshold = 100000;
+    protected static int sThreshold = 100;
+    int start;
 
     // constructor method
-    public MeanFilterParallel(BufferedImage startImage, int height, int width, BufferedImage destinationImage) {
-        image = startImage;
-        image2 = destinationImage;
-        maxHeight = height;
-        maxWidth = width;
+    public MeanFilterParallel(int width, int start) {
+        this.width = width;
+        this.start = start;
 
     }
 
     protected void computeDirectly() {
-        for (int x = radius; x < maxWidth - radius; ++x) {
-            for (int y = radius; y < maxHeight - radius; ++y) {
+        for (int x = start; x < start + radius; ++x) {
+            for (int y = 0; y < radius; ++y) {
                 // call an average method
                 image2.setRGB(x, y, average(x, y, image, radius));
             }
@@ -42,33 +41,35 @@ public class MeanFilterParallel extends RecursiveAction {
     }
 
     protected void compute() {
-        if (maxWidth < sThreshold) {
+        if (width < sThreshold) {
             computeDirectly();
             return;
         }
 
-        int split = maxWidth / 2;
+        int split = width / 2;
         if (split == 0) {
             computeDirectly();
             return;
         }
+        // split value + your start value
+        MeanFilterParallel left = new MeanFilterParallel(split, start);
+        MeanFilterParallel right = new MeanFilterParallel(width - split, split);
+        left.fork();
+        right.fork();
+        left.join();
+        right.join();
 
-        invokeAll(new MeanFilterParallel(image, maxHeight, split, image2),
-                new MeanFilterParallel(image, maxHeight + split, maxWidth - split,
-                        image2));
     }
 
     // main class
     public static void main(String[] args) throws IOException {
         try {
             // set all the variabls of the file
+
             imageFile = new File("example.jpg"); // TODO change it to the args
             image = ImageIO.read(imageFile);
             // getting the dimensions of the image
-            maxHeight = image.getHeight();
-            maxWidth = image.getWidth();
-            image2 = new BufferedImage(maxWidth, maxHeight, BufferedImage.TYPE_INT_RGB);
-            // new BufferedImage(maxWidth, maxHeight, BufferedImage.TYPE_INT_RGB);
+
         }
 
         catch (IOException e) {
@@ -81,10 +82,10 @@ public class MeanFilterParallel extends RecursiveAction {
                 + (processors != 1 ? "s are " : " is ")
                 + "available");
 
-        MeanFilterParallel fb = new MeanFilterParallel(image, maxHeight, maxWidth, image2);
-
+        MeanFilterParallel fb = new MeanFilterParallel(image.getWidth(), 0);
+        fb.height = image.getWidth();
+        image2 = new BufferedImage(fb.width, fb.height, BufferedImage.TYPE_INT_RGB);
         ForkJoinPool pool = new ForkJoinPool();
-
         long startTime = System.currentTimeMillis();
         pool.invoke(fb);
         long endTime = System.currentTimeMillis();
@@ -93,7 +94,7 @@ public class MeanFilterParallel extends RecursiveAction {
                 " milliseconds.");
 
         System.out.println("Writing to file");
-        File outputfile = new File("task1output3x3.png");
+        File outputfile = new File("imageBlurParallel.png");
 
         // TODO- maybe just writing to the thing will work
         ImageIO.write(image2, "jpg", outputfile);
