@@ -20,7 +20,7 @@ public class MeanFilterParallel extends RecursiveAction {
     static int sliderVariable; // args[2]
     static int radius = sliderVariable / 2;
     static BufferedImage image2 = null; // args[1]
-    protected static int sThreshold = 100;
+    protected static int sThreshold = 100000;
     int start;
 
     // constructor method
@@ -31,33 +31,34 @@ public class MeanFilterParallel extends RecursiveAction {
     }
 
     protected void computeDirectly() {
-        for (int x = start; x < start + radius; ++x) {
+        for (int x = radius; x < start + radius; ++x) {
             for (int y = 0; y < radius; ++y) {
                 // call an average method
+                if (y < 0 || y >= image.getHeight()) {
+                    continue;
+                }
+                // System.out.println("Called the computeDirectly");
                 image2.setRGB(x, y, average(x, y, image, radius));
             }
 
         }
+
+        // System.out.println("Called the computeDirectly");
     }
 
     protected void compute() {
         if (width < sThreshold) {
             computeDirectly();
-            return;
-        }
 
-        int split = width / 2;
-        if (split == 0) {
-            computeDirectly();
             return;
+        } else {
+            int split = width / 2;
+
+            // split value + your start value
+            invokeAll(new MeanFilterParallel(split, start),
+                    new MeanFilterParallel(split, start + split));
+            System.out.println("Invoked the pooled threads");
         }
-        // split value + your start value
-        MeanFilterParallel left = new MeanFilterParallel(split, start);
-        MeanFilterParallel right = new MeanFilterParallel(width - split, split);
-        left.fork();
-        right.fork();
-        left.join();
-        right.join();
 
     }
 
@@ -83,15 +84,16 @@ public class MeanFilterParallel extends RecursiveAction {
                 + "available");
 
         MeanFilterParallel fb = new MeanFilterParallel(image.getWidth(), 0);
-        fb.height = image.getWidth();
+        fb.height = image.getHeight();
         image2 = new BufferedImage(fb.width, fb.height, BufferedImage.TYPE_INT_RGB);
-        ForkJoinPool pool = new ForkJoinPool();
-        long startTime = System.currentTimeMillis();
-        pool.invoke(fb);
-        long endTime = System.currentTimeMillis();
+        mean(image);
+        // ForkJoinPool pool = new ForkJoinPool();
+        // long startTime = System.currentTimeMillis();
+        // pool.invoke(fb);
+        // long endTime = System.currentTimeMillis();
 
-        System.out.println("Image blur took " + (endTime - startTime) +
-                " milliseconds.");
+        // System.out.println("Image blur took " + (endTime - startTime) +
+        // " milliseconds.");
 
         System.out.println("Writing to file");
         File outputfile = new File("imageBlurParallel.png");
@@ -99,6 +101,10 @@ public class MeanFilterParallel extends RecursiveAction {
         // TODO- maybe just writing to the thing will work
         ImageIO.write(image2, "jpg", outputfile);
         System.out.println("Image done ");
+
+    }
+
+    public static void mean(BufferedImage image) {
 
     }
 
@@ -117,11 +123,13 @@ public class MeanFilterParallel extends RecursiveAction {
             }
 
         }
-        return makePixel(totals[0] / count, totals[1] / count, totals[2] / count);
+        System.out.println("Called the average filter");
+        return makePixel(totals[0] / count, totals[0] / count, totals[0] / count);
 
     }
 
     public static int makePixel(int r, int g, int b) {
+        System.out.println("Called the make filter");
         return (r << 16) | (g << 8) | b;
     }
 
