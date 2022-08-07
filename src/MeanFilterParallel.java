@@ -99,11 +99,11 @@ public class MeanFilterParallel extends RecursiveAction {
 
     public static void main(String[] args) throws IOException {
 
-        imageFile = new File("example.jpg");
+        imageFile = new File("pictures/samples/example.jpg");
         image = ImageIO.read(imageFile);
         image2 = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_INT_RGB);
         mean(image);
-        File outputfile = new File("imageBlurParallel.jpg");
+        File outputfile = new File("pictures/mean/meanParallel" + "kernelValue" + sliderVariable + ".jpg");
 
         // TODO- maybe just writing to the thing will work
         ImageIO.write(image2, "jpg", outputfile);

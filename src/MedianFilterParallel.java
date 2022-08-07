@@ -118,11 +118,11 @@ public class MedianFilterParallel extends RecursiveAction {
 
     public static void main(String[] args) throws IOException {
 
-        imageFile = new File("example.jpg");
+        imageFile = new File("pictures/samples/example.jpg");
         image = ImageIO.read(imageFile);
         image2 = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_INT_RGB);
         mean(image);
-        File outputfile = new File("imageMedianParallel.jpg");
+        File outputfile = new File("pictures/median/medianParallel" + "kernelValue" + sliderVariable + ".jpg");
 
         // TODO- maybe just writing to the thing will work
         ImageIO.write(image2, "jpg", outputfile);

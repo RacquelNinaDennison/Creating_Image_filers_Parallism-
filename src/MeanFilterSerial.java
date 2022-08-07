@@ -43,13 +43,13 @@ public class MeanFilterSerial {
         int maxWidth = 0;
         File imageFile; // args[0]
         BufferedImage image = null;
-        int sliderVariable = 9; // args[2]
+        int sliderVariable = 5; // args[2]
         int radius = sliderVariable / 2;
         BufferedImage image2 = null; // args[1]
 
         try {
             // set all the variabls of the file
-            imageFile = new File("example.jpg"); // TODO jpg
+            imageFile = new File("pictures/samples/example.jpg"); // TODO jpg
             image = ImageIO.read(imageFile);
             // getting the dimensions of the image
             maxHeight = image.getHeight();
@@ -70,7 +70,7 @@ public class MeanFilterSerial {
             }
 
         }
-        File outputfile = new File("task1output3x3.png");
+        File outputfile = new File("pictures/mean/meanSerial" + "kernelValue" + sliderVariable + ".jpg");
 
         // TODO- maybe just writing to the thing will work
         ImageIO.write(image2, "jpg", outputfile);

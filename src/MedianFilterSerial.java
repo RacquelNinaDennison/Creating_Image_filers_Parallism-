@@ -60,7 +60,7 @@ public class MedianFilterSerial {
 
         try {
             // set all the variabls of the file
-            imageFile = new File("example.jpg"); // TODO jpg
+            imageFile = new File("pictures/samples/example.jpg"); // TODO jpg
             image = ImageIO.read(imageFile);
             // getting the dimensions of the image
             maxHeight = image.getHeight();
@@ -81,7 +81,7 @@ public class MedianFilterSerial {
             }
 
         }
-        File outputfile = new File("task2output3x3.png");
+        File outputfile = new File("pictures/median/medianSerial" + "kernelValue" + sliderVariable + ".jpg");
 
         // TODO- maybe just writing to the thing will work
         ImageIO.write(image2, "jpg", outputfile);
