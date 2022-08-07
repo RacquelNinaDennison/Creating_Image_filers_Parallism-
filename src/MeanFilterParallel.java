@@ -3,6 +3,7 @@ import javax.imageio.ImageIO;
 import java.io.*;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveAction;
+import java.nio.file.*;
 
 public class MeanFilterParallel extends RecursiveAction {
 
@@ -50,7 +51,7 @@ public class MeanFilterParallel extends RecursiveAction {
             // split value + your start value
             invokeAll(new MeanFilterParallel(split, start),
                     new MeanFilterParallel(split, start + split));
-            System.out.println("Invoked the pooled threads");
+
         }
 
     }
@@ -87,7 +88,7 @@ public class MeanFilterParallel extends RecursiveAction {
         return (r << 16) | (g << 8) | b;
     }
 
-    public static void mean(BufferedImage image) {
+    public static void mean(BufferedImage image) throws IOException {
 
         height = image.getHeight();
         MeanFilterParallel fb = new MeanFilterParallel(image.getWidth(), 0);
@@ -95,6 +96,11 @@ public class MeanFilterParallel extends RecursiveAction {
         long startTime = System.currentTimeMillis();
         pool.invoke(fb);
         long endTime = System.currentTimeMillis();
+        String oFile = ("results/mean/" + imageFile.getName() + "_" + sliderVariable + "sliderVariable.txt");
+        String timeTaken = ("Time taken for mean parallel: " + (endTime - startTime) / 1000.00 + " seconds"
+                + " at a slider value of "
+                + sliderVariable + '\n' + "----------------------------------------------------------" + '\n');
+        Files.write(Paths.get(oFile), timeTaken.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
     }
 
     public static void main(String[] args) throws IOException {

@@ -1,20 +1,10 @@
-
-import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
-import javax.sound.midi.Sequencer.SyncMode;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 import java.io.*;
 import java.util.*;
-import java.awt.*;
-import javax.swing.*;
-import java.awt.image.BufferedImage;
-import javax.imageio.ImageIO;
-import java.io.*;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveAction;
+import java.nio.file.*;
 
 public class MedianFilterParallel extends RecursiveAction {
 
@@ -62,7 +52,7 @@ public class MedianFilterParallel extends RecursiveAction {
             // split value + your start value
             invokeAll(new MedianFilterParallel(split, start),
                     new MedianFilterParallel(split, start + split));
-            System.out.println("Invoked the pooled threads");
+
         }
 
     }
@@ -106,7 +96,7 @@ public class MedianFilterParallel extends RecursiveAction {
         return (r << 16) | (g << 8) | b;
     }
 
-    public static void mean(BufferedImage image) {
+    public static void mean(BufferedImage image) throws IOException {
 
         height = image.getHeight();
         MedianFilterParallel fb = new MedianFilterParallel(image.getWidth(), 0);
@@ -114,6 +104,12 @@ public class MedianFilterParallel extends RecursiveAction {
         long startTime = System.currentTimeMillis();
         pool.invoke(fb);
         long endTime = System.currentTimeMillis();
+        String oFile = ("results/median/" + imageFile.getName() + "_" + sliderVariable + "sliderVariable.txt");
+        String timeTaken = ("Time taken for median parallel : " + (endTime - startTime) / 1000.00 + " seconds"
+                + " at a slider value of "
+                + sliderVariable + '\n' + "----------------------------------------------------------" + '\n');
+        Files.write(Paths.get(oFile), timeTaken.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+
     }
 
     public static void main(String[] args) throws IOException {

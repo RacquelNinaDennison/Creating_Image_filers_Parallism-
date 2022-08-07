@@ -1,0 +1,4 @@
+Time taken for mean parallel: 0.167 seconds at a slider value of 9
+----------------------------------------------------------
+Time taken for mean serial: 0.16 seconds at a slider value of 9
+----------------------------------------------------------

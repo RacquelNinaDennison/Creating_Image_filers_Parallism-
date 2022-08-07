@@ -1,0 +1,4 @@
+Time taken for median serial: 1.091 seconds at a slider value of 9
+----------------------------------------------------------
+Time taken for median parallel : 0.847 seconds at a slider value of 9
+----------------------------------------------------------

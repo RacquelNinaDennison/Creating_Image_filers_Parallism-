@@ -1,14 +1,8 @@
-import java.awt.Graphics;
-import java.awt.Image;
+
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
-import javax.sound.midi.Sequencer.SyncMode;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 import java.io.*;
-import java.util.*;
-import java.awt.*;
-import javax.swing.*;
+import java.nio.file.*;
 
 public class MeanFilterSerial {
 
@@ -19,7 +13,14 @@ public class MeanFilterSerial {
         int count = 0;
         for (int i = x; i < x + radius; i++) {
             // add outter bounds conditions
+            if (i < 0 || i >= image.getWidth()) {
+                continue;
+            }
+
             for (int j = y - radius; j <= y + radius; ++j) {
+                if (j < 0 || j >= image.getHeight()) {
+                    continue;
+                }
                 int pixel = image.getRGB(i, j);
                 totals[0] += (pixel >> 16) & 0xff;
                 totals[1] += (pixel >> 8) & 0xff;
@@ -41,15 +42,15 @@ public class MeanFilterSerial {
     public static void main(String[] args) throws IOException {
         int maxHeight = 0;
         int maxWidth = 0;
-        File imageFile; // args[0]
+        File imageFile = null; // args[0]
         BufferedImage image = null;
-        int sliderVariable = 5; // args[2]
+        int sliderVariable = 9; // args[2]
         int radius = sliderVariable / 2;
         BufferedImage image2 = null; // args[1]
 
         try {
             // set all the variabls of the file
-            imageFile = new File("pictures/samples/example.jpg"); // TODO jpg
+            imageFile = new File("pictures/samples/example.jpg"); // change the arguments
             image = ImageIO.read(imageFile);
             // getting the dimensions of the image
             maxHeight = image.getHeight();
@@ -62,7 +63,7 @@ public class MeanFilterSerial {
             System.out.println("Error was faced: " + e);
         }
         // TODO Fix the looping variables
-
+        long startTime = System.currentTimeMillis();
         for (int x = radius; x < maxWidth - radius; ++x) {
             for (int y = radius; y < maxHeight - radius; ++y) {
                 // call an average method
@@ -70,7 +71,14 @@ public class MeanFilterSerial {
             }
 
         }
+        long endTime = System.currentTimeMillis();
+        String oFile = ("results/mean/" + imageFile.getName() + "_" + sliderVariable + "sliderVariable.txt");
         File outputfile = new File("pictures/mean/meanSerial" + "kernelValue" + sliderVariable + ".jpg");
+        String timeTaken = ("Time taken for mean serial: " + (endTime - startTime) / 1000.00 + " seconds"
+                + " at a slider value of "
+                + sliderVariable + '\n' + "----------------------------------------------------------" + '\n');
+        Files.write(Paths.get(oFile), timeTaken.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+        ImageIO.write(image2, "jpg", outputfile);
 
         // TODO- maybe just writing to the thing will work
         ImageIO.write(image2, "jpg", outputfile);
