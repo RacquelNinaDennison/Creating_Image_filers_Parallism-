@@ -13,7 +13,7 @@ PYTHON=/usr/bin/python
 $(BINDIR)/%.class: $(SRCDIR)/%.java
 	$(JAVAC) -d $(BINDIR)/ -cp $(BINDIR) $<
 
-CLASSES2=MeanFilterParallel.class MeanFilterSerial.class MedianFilterParallel.class MedianFilterSerial.class
+CLASSES2=MeanFilterParallel.class MeanFilterSerial.class MedianFilterParallel.class MedianFilterSerial.class test.class
 
 
 CLASSES=$(CLASSES2:%.class=$(BINDIR)/%.class)
@@ -31,6 +31,9 @@ run-meanSerial: $(CLASSES)
 
 run-meanParallel: $(CLASSES)
 	$(JAVA) -cp $(BINDIR) MeanFilterParallel $(ARGS)  
+
+run-test: $(CLASSES)
+	$(JAVA) -cp $(BINDIR) test  
 	
 clean:
 	$(RM) $(BINDIR)/*.class
