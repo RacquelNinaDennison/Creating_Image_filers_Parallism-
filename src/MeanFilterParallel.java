@@ -9,8 +9,9 @@ public class MeanFilterParallel extends RecursiveAction {
 
     static File imageFile; // args[0]
     static BufferedImage image = null; // buffered image to send to
-    static int sliderVariable = 9; // args[2]
-    static int radius = sliderVariable / 2;
+    static String windowSize = null;
+    static int sliderVariable = 0;
+    static int radius = 0;
     static BufferedImage image2 = null; // args[1]
     protected static int sThreshold = 100;
     int start;
@@ -27,11 +28,6 @@ public class MeanFilterParallel extends RecursiveAction {
     protected void computeDirectly() {
         for (int x = start; x < start + width; ++x) {
             for (int y = 0; y < height; ++y) {
-                // call an average method
-                // if (y < 0 || y >= image.getHeight()) {
-                // continue;
-                // }
-                // System.out.println("Called the computeDirectly");
                 image2.setRGB(x, y, average(x, y, image, radius));
             }
 
@@ -97,19 +93,27 @@ public class MeanFilterParallel extends RecursiveAction {
         pool.invoke(fb);
         long endTime = System.currentTimeMillis();
         String oFile = ("results/mean/" + imageFile.getName() + "_" + sliderVariable + "sliderVariable.txt");
-        String timeTaken = ("Time taken for mean parallel: " + (endTime - startTime) / 1000.00 + " seconds"
+        String timeTaken = ("Report for parallel median--------------------------------" + "\n"
+                + "Time taken for mean parallel : " + (endTime - startTime) / 1000.00 + " seconds"
                 + " at a slider value of "
-                + sliderVariable + '\n' + "----------------------------------------------------------" + '\n');
+                + sliderVariable + '\n' + "------------------------"
+                + " Width : " + image.getWidth() + " Height: " + image.getHeight() +
+                " -----------------------------------------------" + '\n');
         Files.write(Paths.get(oFile), timeTaken.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
     }
 
     public static void main(String[] args) throws IOException {
-
-        imageFile = new File("pictures/samples/example.jpg");
+        windowSize = args[2];
+        sliderVariable = Integer.parseInt(windowSize);
+        radius = sliderVariable / 2;
+        imageFile = new File("pictures/samples/" + args[0] + ".jpg");
         image = ImageIO.read(imageFile);
-        image2 = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_INT_RGB);
-        mean(image);
-        File outputfile = new File("pictures/mean/meanParallel" + "kernelValue" + sliderVariable + ".jpg");
+        image2 = ImageIO.read(imageFile);
+        for (int r = 0; r < 10; r++) {
+            mean(image);
+        }
+        File outputfile = new File(
+                "pictures/mean/meanParallel" + "kernelValue" + sliderVariable + "_" + args[1] + ".jpg");
 
         // TODO- maybe just writing to the thing will work
         ImageIO.write(image2, "jpg", outputfile);

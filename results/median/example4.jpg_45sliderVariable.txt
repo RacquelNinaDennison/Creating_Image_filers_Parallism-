@@ -1,0 +1,6 @@
+Report for serial median--------------------------------
+Time taken for mean serial : 56957 seconds at a slider value of 45
+------------------------ Width : 512 Height: 512 -----------------------------------------------
+Report for serial median--------------------------------
+Time taken for mean serial : 57215 seconds at a slider value of 45
+------------------------ Width : 512 Height: 512 -----------------------------------------------

@@ -1,0 +1,30 @@
+Report for serial median--------------------------------
+Time taken for mean serial : 9028 seconds at a slider value of 27
+------------------------ Width : 450 Height: 300 -----------------------------------------------
+Report for serial median--------------------------------
+Time taken for mean serial : 8909 seconds at a slider value of 27
+------------------------ Width : 450 Height: 300 -----------------------------------------------
+Report for serial median--------------------------------
+Time taken for mean serial : 8856 seconds at a slider value of 27
+------------------------ Width : 450 Height: 300 -----------------------------------------------
+Report for serial median--------------------------------
+Time taken for mean serial : 8860 seconds at a slider value of 27
+------------------------ Width : 450 Height: 300 -----------------------------------------------
+Report for serial median--------------------------------
+Time taken for mean serial : 8906 seconds at a slider value of 27
+------------------------ Width : 450 Height: 300 -----------------------------------------------
+Report for serial median--------------------------------
+Time taken for mean serial : 8859 seconds at a slider value of 27
+------------------------ Width : 450 Height: 300 -----------------------------------------------
+Report for serial median--------------------------------
+Time taken for mean serial : 8835 seconds at a slider value of 27
+------------------------ Width : 450 Height: 300 -----------------------------------------------
+Report for serial median--------------------------------
+Time taken for mean serial : 8860 seconds at a slider value of 27
+------------------------ Width : 450 Height: 300 -----------------------------------------------
+Report for serial median--------------------------------
+Time taken for mean serial : 8842 seconds at a slider value of 27
+------------------------ Width : 450 Height: 300 -----------------------------------------------
+Report for serial median--------------------------------
+Time taken for mean serial : 8854 seconds at a slider value of 27
+------------------------ Width : 450 Height: 300 -----------------------------------------------

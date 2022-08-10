@@ -1,0 +1,1 @@
+{"buildTargets":["clean","default","run-meanParallel","run-meanSerial","run-medianParallel","run-medianSerial"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}

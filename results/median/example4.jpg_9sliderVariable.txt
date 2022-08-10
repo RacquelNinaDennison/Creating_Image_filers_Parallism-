@@ -1,0 +1,30 @@
+Report for serial median--------------------------------
+Time taken for mean serial : 1780 seconds at a slider value of 9
+------------------------ Width : 512 Height: 512 -----------------------------------------------
+Report for serial median--------------------------------
+Time taken for mean serial : 1632 seconds at a slider value of 9
+------------------------ Width : 512 Height: 512 -----------------------------------------------
+Report for serial median--------------------------------
+Time taken for mean serial : 1614 seconds at a slider value of 9
+------------------------ Width : 512 Height: 512 -----------------------------------------------
+Report for serial median--------------------------------
+Time taken for mean serial : 1609 seconds at a slider value of 9
+------------------------ Width : 512 Height: 512 -----------------------------------------------
+Report for serial median--------------------------------
+Time taken for mean serial : 1608 seconds at a slider value of 9
+------------------------ Width : 512 Height: 512 -----------------------------------------------
+Report for serial median--------------------------------
+Time taken for mean serial : 1618 seconds at a slider value of 9
+------------------------ Width : 512 Height: 512 -----------------------------------------------
+Report for serial median--------------------------------
+Time taken for mean serial : 1615 seconds at a slider value of 9
+------------------------ Width : 512 Height: 512 -----------------------------------------------
+Report for serial median--------------------------------
+Time taken for mean serial : 1605 seconds at a slider value of 9
+------------------------ Width : 512 Height: 512 -----------------------------------------------
+Report for serial median--------------------------------
+Time taken for mean serial : 1605 seconds at a slider value of 9
+------------------------ Width : 512 Height: 512 -----------------------------------------------
+Report for serial median--------------------------------
+Time taken for mean serial : 1611 seconds at a slider value of 9
+------------------------ Width : 512 Height: 512 -----------------------------------------------

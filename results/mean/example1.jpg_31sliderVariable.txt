@@ -1,0 +1,60 @@
+Report for serial mean--------------------------------
+Time taken for mean serial : 1.313 seconds at a slider value of 31
+------------------------ Width : 424 Height: 362 -----------------------------------------------
+Report for serial mean--------------------------------
+Time taken for mean serial : 1.272 seconds at a slider value of 31
+------------------------ Width : 424 Height: 362 -----------------------------------------------
+Report for serial mean--------------------------------
+Time taken for mean serial : 1.259 seconds at a slider value of 31
+------------------------ Width : 424 Height: 362 -----------------------------------------------
+Report for serial mean--------------------------------
+Time taken for mean serial : 1.254 seconds at a slider value of 31
+------------------------ Width : 424 Height: 362 -----------------------------------------------
+Report for serial mean--------------------------------
+Time taken for mean serial : 1.254 seconds at a slider value of 31
+------------------------ Width : 424 Height: 362 -----------------------------------------------
+Report for serial mean--------------------------------
+Time taken for mean serial : 1.248 seconds at a slider value of 31
+------------------------ Width : 424 Height: 362 -----------------------------------------------
+Report for serial mean--------------------------------
+Time taken for mean serial : 1.254 seconds at a slider value of 31
+------------------------ Width : 424 Height: 362 -----------------------------------------------
+Report for serial mean--------------------------------
+Time taken for mean serial : 1.262 seconds at a slider value of 31
+------------------------ Width : 424 Height: 362 -----------------------------------------------
+Report for serial mean--------------------------------
+Time taken for mean serial : 1.254 seconds at a slider value of 31
+------------------------ Width : 424 Height: 362 -----------------------------------------------
+Report for serial mean--------------------------------
+Time taken for mean serial : 1.25 seconds at a slider value of 31
+------------------------ Width : 424 Height: 362 -----------------------------------------------
+Report for parallel median--------------------------------
+Time taken for mean parallel : 1.161 seconds at a slider value of 31
+------------------------ Width : 424 Height: 362 -----------------------------------------------
+Report for parallel median--------------------------------
+Time taken for mean parallel : 0.42 seconds at a slider value of 31
+------------------------ Width : 424 Height: 362 -----------------------------------------------
+Report for parallel median--------------------------------
+Time taken for mean parallel : 0.375 seconds at a slider value of 31
+------------------------ Width : 424 Height: 362 -----------------------------------------------
+Report for parallel median--------------------------------
+Time taken for mean parallel : 0.37 seconds at a slider value of 31
+------------------------ Width : 424 Height: 362 -----------------------------------------------
+Report for parallel median--------------------------------
+Time taken for mean parallel : 0.381 seconds at a slider value of 31
+------------------------ Width : 424 Height: 362 -----------------------------------------------
+Report for parallel median--------------------------------
+Time taken for mean parallel : 0.394 seconds at a slider value of 31
+------------------------ Width : 424 Height: 362 -----------------------------------------------
+Report for parallel median--------------------------------
+Time taken for mean parallel : 0.399 seconds at a slider value of 31
+------------------------ Width : 424 Height: 362 -----------------------------------------------
+Report for parallel median--------------------------------
+Time taken for mean parallel : 0.378 seconds at a slider value of 31
+------------------------ Width : 424 Height: 362 -----------------------------------------------
+Report for parallel median--------------------------------
+Time taken for mean parallel : 0.382 seconds at a slider value of 31
+------------------------ Width : 424 Height: 362 -----------------------------------------------
+Report for parallel median--------------------------------
+Time taken for mean parallel : 0.383 seconds at a slider value of 31
+------------------------ Width : 424 Height: 362 -----------------------------------------------
