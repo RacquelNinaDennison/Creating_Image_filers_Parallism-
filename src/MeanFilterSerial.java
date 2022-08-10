@@ -45,13 +45,12 @@ public class MeanFilterSerial {
         // args[1]
 
         try {
-            // set all the variabls of the file
-            imageFile = new File("pictures/samples/" + args[0] + ".jpg"); // change the arguments
-            image = ImageIO.read(imageFile);
+            // set all the variabls of the file // change the arguments
+            image = ImageIO.read(new File("pictures/samples/" + args[0] + ".jpg"));
             // getting the dimensions of the image
             maxHeight = image.getHeight();
             maxWidth = image.getWidth();
-            image2 = ImageIO.read(imageFile);
+            image2 = ImageIO.read(new File("pictures/samples/" + args[0] + ".jpg"));
             // new BufferedImage(maxWidth, maxHeight, BufferedImage.TYPE_INT_RGB);
         }
 
@@ -70,14 +69,14 @@ public class MeanFilterSerial {
 
             }
             long endTime = System.currentTimeMillis();
-            String oFile = ("results/mean/" + imageFile.getName() + "_" + sliderVariable + "sliderVariable.txt");
+            String oFile = ("results/mean/" + (new File("pictures/samples/" + args[0] + ".jpg")).getName() + "_" + sliderVariable + "sliderVariable.txt");
             File outputfile = new File(
                     "pictures/mean/meanSerial" + "kernelValue" + sliderVariable + "_" + args[1] + ".jpg");
             String timeTaken = ("Report for serial mean--------------------------------" + "\n"
                     + "Time taken for mean serial : " + (endTime - startTime) / 1000.00 + " seconds"
                     + " at a slider value of "
                     + sliderVariable + '\n' + "------------------------"
-                    + " Width : " + image.getWidth() + " Height: " + image.getHeight() +
+                    + " Width : " + maxWidth + " Height: " + maxHeight +
                     " -----------------------------------------------" + '\n');
             Files.write(Paths.get(oFile), timeTaken.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
             ImageIO.write(image2, "jpg", outputfile);
