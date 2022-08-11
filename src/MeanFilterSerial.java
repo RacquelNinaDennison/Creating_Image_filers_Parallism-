@@ -69,14 +69,15 @@ public class MeanFilterSerial {
 
             }
             long endTime = System.currentTimeMillis();
-            String oFile = ("results/mean/" + (new File("pictures/samples/" + args[0] + ".jpg")).getName() + "_" + sliderVariable + "sliderVariable.txt");
+            String oFile = ("results/mean/" + (new File("pictures/samples/" + args[0] + ".jpg")).getName() + "_"
+                    + sliderVariable + "sliderVariable.txt");
             File outputfile = new File(
                     "pictures/mean/meanSerial" + "kernelValue" + sliderVariable + "_" + args[1] + ".jpg");
             String timeTaken = ("Report for serial mean--------------------------------" + "\n"
                     + "Time taken for mean serial : " + (endTime - startTime) / 1000.00 + " seconds"
                     + " at a slider value of "
                     + sliderVariable + '\n' + "------------------------"
-                    + " Width : " + maxWidth + " Height: " + maxHeight +
+                    + " Width : " + maxWidth + " Height: " + image.getHeight() +
                     " -----------------------------------------------" + '\n');
             Files.write(Paths.get(oFile), timeTaken.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
             ImageIO.write(image2, "jpg", outputfile);

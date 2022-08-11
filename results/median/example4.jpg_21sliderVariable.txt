@@ -1,60 +1,60 @@
 Report for serial median--------------------------------
-Time taken for mean serial : 1780 seconds at a slider value of 9
+Time taken for mean serial : 11592 seconds at a slider value of 21
 ------------------------ Width : 512 Height: 512 -----------------------------------------------
 Report for serial median--------------------------------
-Time taken for mean serial : 1643 seconds at a slider value of 9
+Time taken for mean serial : 11364 seconds at a slider value of 21
 ------------------------ Width : 512 Height: 512 -----------------------------------------------
 Report for serial median--------------------------------
-Time taken for mean serial : 1623 seconds at a slider value of 9
+Time taken for mean serial : 11363 seconds at a slider value of 21
 ------------------------ Width : 512 Height: 512 -----------------------------------------------
 Report for serial median--------------------------------
-Time taken for mean serial : 1618 seconds at a slider value of 9
+Time taken for mean serial : 11364 seconds at a slider value of 21
 ------------------------ Width : 512 Height: 512 -----------------------------------------------
 Report for serial median--------------------------------
-Time taken for mean serial : 1613 seconds at a slider value of 9
+Time taken for mean serial : 11366 seconds at a slider value of 21
 ------------------------ Width : 512 Height: 512 -----------------------------------------------
 Report for serial median--------------------------------
-Time taken for mean serial : 1659 seconds at a slider value of 9
+Time taken for mean serial : 11365 seconds at a slider value of 21
 ------------------------ Width : 512 Height: 512 -----------------------------------------------
 Report for serial median--------------------------------
-Time taken for mean serial : 1740 seconds at a slider value of 9
+Time taken for mean serial : 11371 seconds at a slider value of 21
 ------------------------ Width : 512 Height: 512 -----------------------------------------------
 Report for serial median--------------------------------
-Time taken for mean serial : 1736 seconds at a slider value of 9
+Time taken for mean serial : 11420 seconds at a slider value of 21
 ------------------------ Width : 512 Height: 512 -----------------------------------------------
 Report for serial median--------------------------------
-Time taken for mean serial : 1713 seconds at a slider value of 9
+Time taken for mean serial : 11410 seconds at a slider value of 21
 ------------------------ Width : 512 Height: 512 -----------------------------------------------
 Report for serial median--------------------------------
-Time taken for mean serial : 1711 seconds at a slider value of 9
+Time taken for mean serial : 11383 seconds at a slider value of 21
 ------------------------ Width : 512 Height: 512 -----------------------------------------------
 Report for parallel median--------------------------------
-Time  : 1.202 seconds at a slider value of 9
+Time  : 6.929 seconds at a slider value of 21
 ----------- Threshold Value 512 Width : 512 Height: 512 -----------------------------------------------
 Report for parallel median--------------------------------
-Time  : 0.893 seconds at a slider value of 9
+Time  : 6.559 seconds at a slider value of 21
 ----------- Threshold Value 512 Width : 512 Height: 512 -----------------------------------------------
 Report for parallel median--------------------------------
-Time  : 0.858 seconds at a slider value of 9
+Time  : 6.473 seconds at a slider value of 21
 ----------- Threshold Value 512 Width : 512 Height: 512 -----------------------------------------------
 Report for parallel median--------------------------------
-Time  : 0.877 seconds at a slider value of 9
+Time  : 6.405 seconds at a slider value of 21
 ----------- Threshold Value 512 Width : 512 Height: 512 -----------------------------------------------
 Report for parallel median--------------------------------
-Time  : 0.831 seconds at a slider value of 9
+Time  : 6.511 seconds at a slider value of 21
 ----------- Threshold Value 512 Width : 512 Height: 512 -----------------------------------------------
 Report for parallel median--------------------------------
-Time  : 0.894 seconds at a slider value of 9
+Time  : 6.435 seconds at a slider value of 21
 ----------- Threshold Value 512 Width : 512 Height: 512 -----------------------------------------------
 Report for parallel median--------------------------------
-Time  : 0.827 seconds at a slider value of 9
+Time  : 6.515 seconds at a slider value of 21
 ----------- Threshold Value 512 Width : 512 Height: 512 -----------------------------------------------
 Report for parallel median--------------------------------
-Time  : 0.88 seconds at a slider value of 9
+Time  : 6.449 seconds at a slider value of 21
 ----------- Threshold Value 512 Width : 512 Height: 512 -----------------------------------------------
 Report for parallel median--------------------------------
-Time  : 0.886 seconds at a slider value of 9
+Time  : 6.434 seconds at a slider value of 21
 ----------- Threshold Value 512 Width : 512 Height: 512 -----------------------------------------------
 Report for parallel median--------------------------------
-Time  : 0.854 seconds at a slider value of 9
+Time  : 6.416 seconds at a slider value of 21
 ----------- Threshold Value 512 Width : 512 Height: 512 -----------------------------------------------

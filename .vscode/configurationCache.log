@@ -1,1 +1,1 @@
-{"buildTargets":["clean","default","run-meanParallel","run-meanSerial","run-medianParallel","run-medianSerial"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
+{"buildTargets":["clean","default","make","run-meanParallel","run-meanSerial","run-medianParallel","run-medianSerial","run-test"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}

@@ -15,14 +15,12 @@ root = pathlib.Path(__file__).resolve()
 root = root.parents[1]
 
 def experiment():
-    for ds in ['meanSerial', 'meanParallel','medianSerial','medianParallel']:
-        for i in ['1','2','3','4']:
-          for j in ['9','27','31','45']:
-              os.system(f'make run-{ds} ARGS="example{i} example{i} {j}"'
+    for ds in ['medianSerial','medianParallel','meanSerial','meanParallel']:
+        for i in ['example2','example4']:
+            for j in ['9','11','21']:
+                os.system(f'make run-{ds} ARGS="{i} {i}{j} {j}"')
               
               
-            ) 
-        
         
                          
 if __name__=='__main__':

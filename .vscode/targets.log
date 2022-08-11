@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Aug 10 10:36:55 2022
+# Make data base, printed on Thu Aug 11 22:39:21 2022
 
 # Variables
 
@@ -17,7 +15,7 @@ make: *** No rule to make target 'all'.  Stop.
 # automatic
 ?F = $(notdir $?)
 # environment
-WSLENV = VSCODE_WSL_EXT_LOCATION/up
+WSLENV = ELECTRON_RUN_AS_NODE/w:
 # default
 .SHELLFLAGS := -c
 # automatic
@@ -33,7 +31,7 @@ SHELL = /bin/sh
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
 # environment
-_ = /home/racquel/.vscode-server/bin/da76f93349a72022ca4670c1b84860304616aaa2/node
+_ = /mnt/c/Users/racqu/AppData/Local/Programs/Microsoft VS Code/bin/code
 # makefile (from 'makefile', line 1)
 MAKEFILE_LIST :=  makefile
 # 'override' directive
@@ -47,13 +45,13 @@ VSCODE_CWD = /mnt/c/Users/racqu/AppData/Local/Programs/Microsoft VS Code
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/racquel/.vscode-server/bin/da76f93349a72022ca4670c1b84860304616aaa2/bin/remote-cli:/home/racquel/.local/bin:/home/racquel/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Eclipse Adoptium/jdk-17.0.2.8-hotspot/bin:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/nodejs/:/mnt/c/Users/racqu/AppData/Local/Programs/Python/Python310:/mnt/c/Users/racqu/AppData/Local/Programs/Python/Python310/Scripts:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/MySQL/MySQL Shell 8.0/bin/:/mnt/c/Users/racqu/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/racqu/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/racqu/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/racqu/AppData/Roaming/npm:/mnt/c/Users/racqu/AppData/Local/Programs/MiKTeX/miktex/bin/x64/:/mnt/c/Users/racqu/anaconda3/Scripts/conda.exe:/mnt/c/Users/racqu/anaconda3/condabin/conda.bat:/mnt/c/Users/racqu/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/racqu/AppData/Local/atom/bin:/snap/bin
+PATH = /home/racquel/.vscode-server/bin/6d9b74a70ca9c7733b29f0456fd8195364076dda/bin/remote-cli:/home/racquel/.local/bin:/home/racquel/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Eclipse Adoptium/jdk-17.0.2.8-hotspot/bin:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/nodejs/:/mnt/c/Users/racqu/AppData/Local/Programs/Python/Python310:/mnt/c/Users/racqu/AppData/Local/Programs/Python/Python310/Scripts:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/MySQL/MySQL Shell 8.0/bin/:/mnt/c/Users/racqu/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/racqu/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/racqu/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/racqu/AppData/Roaming/npm:/mnt/c/Users/racqu/AppData/Local/Programs/MiKTeX/miktex/bin/x64/:/mnt/c/Users/racqu/anaconda3/Scripts/conda.exe:/mnt/c/Users/racqu/anaconda3/condabin/conda.bat:/mnt/c/Users/racqu/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/racqu/AppData/Local/atom/bin:/snap/bin
 # environment
 XDG_RUNTIME_DIR = /mnt/wslg/runtime-dir
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-8e6076c0-76b1-44f8-aec6-86ce1ea7c480.sock
+VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-7b116d86-9c21-4dc9-9570-fc369b799aa8.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -71,7 +69,7 @@ JAVA = /usr/bin/java
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/11_interop
+WSL_INTEROP = /run/WSL/11991_interop
 # environment
 PULSE_SERVER = /mnt/wslg/PulseServer
 # makefile (from 'makefile', line 11)
@@ -99,7 +97,7 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-SHLVL = 0
+SHLVL = 1
 # makefile (from 'makefile', line 7)
 BINDIR = bin
 # default
@@ -109,7 +107,7 @@ USER = racquel
 # makefile
 .DEFAULT_GOAL := default
 # environment
-NAME = RacquelsPc
+NAME = Code
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -135,7 +133,7 @@ VSCODE_HANDLES_SIGPIPE = true
 # default
 MAKEFILES := 
 # makefile (from 'makefile', line 16)
-CLASSES2 = MeanFilterParallel.class MeanFilterSerial.class MedianFilterParallel.class MedianFilterSerial.class
+CLASSES2 = MeanFilterParallel.class MeanFilterSerial.class MedianFilterParallel.class MedianFilterSerial.class test.class
 # automatic
 <F = $(notdir $<)
 # environment
@@ -162,10 +160,8 @@ SCRIPTS = scripts
 TERM = xterm-256color
 # environment
 WSL_DISTRO_NAME = Ubuntu
-# environment
-MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=76/1024=7%, Rehash=0, Collisions=4/118=3%
+# Load=75/1024=7%, Rehash=0, Collisions=4/120=3%
 
 # Pattern-specific Variable Values
 
@@ -192,7 +188,7 @@ bin/%.class: src/%.java
 
 # Files
 
-run-medianParallel: bin/MeanFilterParallel.class bin/MeanFilterSerial.class bin/MedianFilterParallel.class bin/MedianFilterSerial.class
+run-medianParallel: bin/MeanFilterParallel.class bin/MeanFilterSerial.class bin/MedianFilterParallel.class bin/MedianFilterSerial.class bin/test.class
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -217,7 +213,13 @@ bin/MedianFilterSerial.class:
 #  Modification time never checked.
 #  File has not been updated.
 
-run-meanSerial: bin/MeanFilterParallel.class bin/MeanFilterSerial.class bin/MedianFilterParallel.class bin/MedianFilterSerial.class
+# Not a target:
+bin/test.class:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+run-meanSerial: bin/MeanFilterParallel.class bin/MeanFilterSerial.class bin/MedianFilterParallel.class bin/MedianFilterSerial.class bin/test.class
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -233,7 +235,7 @@ run-meanSerial: bin/MeanFilterParallel.class bin/MeanFilterSerial.class bin/Medi
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-09 11:06:14.4520534
+#  Last modified 2022-08-10 23:08:32.1383426
 #  File has been updated.
 #  Successfully updated.
 
@@ -243,17 +245,24 @@ bin/MedianFilterParallel.class:
 #  Modification time never checked.
 #  File has not been updated.
 
-default: bin/MeanFilterParallel.class bin/MeanFilterSerial.class bin/MedianFilterParallel.class bin/MedianFilterSerial.class
+default: bin/MeanFilterParallel.class bin/MeanFilterSerial.class bin/MedianFilterParallel.class bin/MedianFilterSerial.class bin/test.class
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-run-meanParallel: bin/MeanFilterParallel.class bin/MeanFilterSerial.class bin/MedianFilterParallel.class bin/MedianFilterSerial.class
+run-meanParallel: bin/MeanFilterParallel.class bin/MeanFilterSerial.class bin/MedianFilterParallel.class bin/MedianFilterSerial.class bin/test.class
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 33):
 	$(JAVA) -cp $(BINDIR) MeanFilterParallel $(ARGS)  
+
+run-test: bin/MeanFilterParallel.class bin/MeanFilterSerial.class bin/MedianFilterParallel.class bin/MedianFilterSerial.class bin/test.class
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 36):
+	$(JAVA) -cp $(BINDIR) test  
 	
 
 # Not a target:
@@ -266,6 +275,9 @@ run-meanParallel: bin/MeanFilterParallel.class bin/MeanFilterSerial.class bin/Me
 .java:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
+make: *** No rule to make target 'all'.  Stop.
+
 #  File has not been updated.
 
 # Not a target:
@@ -278,8 +290,7 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
-#  recipe to execute (from 'makefile', line 36):
+#  recipe to execute (from 'makefile', line 39):
 	$(RM) $(BINDIR)/*.class
 	
 
@@ -289,7 +300,7 @@ bin/MeanFilterParallel.class:
 #  Modification time never checked.
 #  File has not been updated.
 
-run-medianSerial: bin/MeanFilterParallel.class bin/MeanFilterSerial.class bin/MedianFilterParallel.class bin/MedianFilterSerial.class
+run-medianSerial: bin/MeanFilterParallel.class bin/MeanFilterSerial.class bin/MedianFilterParallel.class bin/MedianFilterSerial.class bin/test.class
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -298,19 +309,19 @@ run-medianSerial: bin/MeanFilterParallel.class bin/MeanFilterSerial.class bin/Me
 	
 
 # files hash-table stats:
-# Load=16/1024=2%, Rehash=0, Collisions=0/51=0%
+# Load=18/1024=2%, Rehash=0, Collisions=0/63=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 32 / storage = 380 B / avg = 11 B
-# current buf: size = 8162 B / used = 380 B / count = 32 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 34 / storage = 404 B / avg = 11 B
+# current buf: size = 8162 B / used = 404 B / count = 34 / avg = 11 B
 
-# strcache performance: lookups = 61 / hit rate = 47%
+# strcache performance: lookups = 73 / hit rate = 53%
 # hash-table stats:
-# Load=32/8192=0%, Rehash=0, Collisions=3/61=5%
-# Finished Make data base on Wed Aug 10 10:36:55 2022
+# Load=34/8192=0%, Rehash=0, Collisions=3/73=4%
+# Finished Make data base on Thu Aug 11 22:39:21 2022
 
  

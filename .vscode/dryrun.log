@@ -4,5 +4,6 @@ make: Entering directory '/home/racquel/CSC2002S'
 /usr/bin/javac -d bin/ -cp bin src/MeanFilterSerial.java
 /usr/bin/javac -d bin/ -cp bin src/MedianFilterParallel.java
 /usr/bin/javac -d bin/ -cp bin src/MedianFilterSerial.java
+/usr/bin/javac -d bin/ -cp bin src/test.java
 make: Leaving directory '/home/racquel/CSC2002S'
  

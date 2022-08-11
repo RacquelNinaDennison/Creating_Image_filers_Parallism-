@@ -105,7 +105,7 @@ public class MedianFilterParallel extends RecursiveAction {
         long endTime = System.currentTimeMillis();
         String oFile = ("results/median/" + imageFile.getName() + "_" + sliderVariable + "sliderVariable.txt");
         String timeTaken = ("Report for parallel median--------------------------------" + "\n"
-                + "Time taken for median parallel : " + (endTime - startTime) / 1000.00 + " seconds"
+                + "Time  : " + (endTime - startTime) / 1000.00 + " seconds"
                 + " at a slider value of "
                 + sliderVariable + '\n' + "-----------" + " Threshold Value " + sThreshold
                 + " Width : " + image.getWidth() + " Height: " + image.getHeight() +
@@ -131,8 +131,6 @@ public class MedianFilterParallel extends RecursiveAction {
 
         // TODO- maybe just writing to the thing will work
         ImageIO.write(image2, "jpg", outputfile);
-
-        System.out.println(image.getWidth());
 
     }
 }
