@@ -1,4 +1,15 @@
 
+/*
+ * The aim of this program is to filter an image and change the surrounding pixels, given a window size
+ * to the average of the pixels around the pixel. 
+ * This code implements the idea of serialism that will be measured against a paralized program 
+ * @author RacquelDennison
+ * @since 2022-08-13
+ * 
+ */
+
+// importing all the packages 
+
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import java.io.*;
@@ -8,6 +19,17 @@ import java.nio.file.*;
 public class MedianFilterSerial {
 
     /*
+     * The avergae will comput the average of the surround pixels
+     * 
+     * @param x this is the starting x coordinate
+     * 
+     * @param y this is the y starting coordinate
+     * 
+     * @param image The image that is being writen from
+     * 
+     * @param radius the window size
+     * 
+     * @return int the average method
      * 
      */
     public static int average(int x, int y, BufferedImage image, int radius) {
@@ -44,14 +66,25 @@ public class MedianFilterSerial {
 
     }
 
+    /*
+     * making the value that will be used for the pixels
+     */
+
     public static int makePixel(int r, int g, int b) {
         return (r << 16) | (g << 8) | b;
     }
 
     // main class
+    /*
+     * The main method will call the average and make pixel function in order to
+     * filter the image
+     * 
+     * @param arsg are used
+     * arg[0] - name of the image
+     * arg[1] - name of the image it is being sent to
+     * arg[2] - the window size that will be filtered
+     */
     public static void main(String[] args) throws IOException {
-        int maxHeight = 0;
-        int maxWidth = 0;
         File imageFile = null; // args[0]
         BufferedImage image = null;
         String windowSize = args[2]; // args[2]
@@ -64,22 +97,20 @@ public class MedianFilterSerial {
             imageFile = new File("pictures/samples/" + args[0] + ".jpg"); // TODO jpg
             image = ImageIO.read(imageFile);
             // getting the dimensions of the image
-            maxHeight = image.getHeight();
-            maxWidth = image.getWidth();
             image2 = ImageIO.read(imageFile);
-            // new BufferedImage(maxWidth, maxHeight, BufferedImage.TYPE_INT_RGB);
+
         }
 
         catch (IOException e) {
             System.out.println("Error was faced: " + e);
         }
-        // TODO Fix the looping variables
+
         // compute method idea
         // timed section
         for (int r = 0; r < 10; r++) {
             long startTime = System.currentTimeMillis();
-            for (int x = radius; x < maxWidth - radius; x++) {
-                for (int y = radius; y < maxHeight - radius; y++) {
+            for (int x = radius; x < image.getWidth() - radius; x++) {
+                for (int y = radius; y < image.getHeight() - radius; y++) {
                     // call an average method
                     image2.setRGB(x, y, average(x, y, image, radius));
                 }

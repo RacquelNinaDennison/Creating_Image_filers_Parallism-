@@ -1,3 +1,14 @@
+/*
+ * The aim of this program is to filter an image and change the surrounding pixels, given a window size
+ * to the medain value of the pixels around the pixel. 
+ * This code implements the idea of parallelism and extends the RecursiveAction class
+ * @author RacquelDennison
+ * @since 2022-08-13
+ * 
+ */
+
+// importing all the packages 
+
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import java.io.*;
@@ -9,22 +20,33 @@ import java.nio.file.*;
 public class MedianFilterParallel extends RecursiveAction {
 
     static File imageFile; // args[0]
-    static BufferedImage image = null; // buffered image to send to; // args[2]
+    static BufferedImage image = null; // buffered image to send to; // args[1]
     static String windowSize = null;
     static int sliderVariable;
-    static int radius;
+    static int radius; // window radius
     static BufferedImage image2 = null; // args[1]
     static int height;
-    protected static int sThreshold = 10;
+    protected static int sThreshold = 10; // threshold value
     int start;
     int width;
 
     // constructor method
+    /*
+     * The constuctor method of the class
+     * 
+     * @param width This is the width of the image size
+     * 
+     * @param start The starting value for the pixel
+     */
     public MedianFilterParallel(int width, int start) {
         this.width = width;
         this.start = start;
 
     }
+    /*
+     * This is the method that will be called directly if the
+     * width is below the seqiential cut off
+     */
 
     protected void computeDirectly() {
         for (int x = start; x < start + width; ++x) {
@@ -34,9 +56,11 @@ public class MedianFilterParallel extends RecursiveAction {
 
         }
 
-        // System.out.println("Called the computeDirectly");
     }
 
+    /*
+     * The compute method that is called on the forks
+     */
     protected void compute() {
         if (width < sThreshold) {
             computeDirectly();
@@ -45,8 +69,6 @@ public class MedianFilterParallel extends RecursiveAction {
         } else {
             int split = width / 2;
 
-            // // split value + your start value
-            // System.out.println("Made fork");
             invokeAll(new MedianFilterParallel(split, start),
                     new MedianFilterParallel(split, start + split));
 
@@ -54,15 +76,30 @@ public class MedianFilterParallel extends RecursiveAction {
 
     }
 
+    /*
+     * The avergae will comput the average of the surround pixels
+     * 
+     * @param x this is the starting x coordinate
+     * 
+     * @param y this is the y starting coordinate
+     * 
+     * @param image The image that is being writen from
+     * 
+     * @param radius the window size
+     * 
+     * @return int the average method
+     * 
+     */
+
     public static int average(int x, int y, BufferedImage image, int radius) {
-        // making list arrays; maybe less dynamic
+
         int count = 0;
         ArrayList<Integer> redPixels = new ArrayList<>();
         ArrayList<Integer> bluePixels = new ArrayList<>();
         ArrayList<Integer> greenPixels = new ArrayList<>();
 
         for (int i = x; i < x + radius; ++i) {
-            // add outter bounds conditions
+
             if (i < 0 || i >= image.getWidth()) {
                 continue;
             }
@@ -89,11 +126,19 @@ public class MedianFilterParallel extends RecursiveAction {
 
     }
 
+    /*
+     * this method will return the pixel value
+     */
     public static int makePixel(int r, int g, int b) {
 
         return (r << 16) | (g << 8) | b;
     }
 
+    /*
+     * this method will write to the file and test the running time of the frkjoin
+     * framework
+     * this is where the execution of the method takes place
+     */
     public static void mean(BufferedImage image) throws IOException {
 
         height = image.getHeight();
@@ -116,7 +161,7 @@ public class MedianFilterParallel extends RecursiveAction {
 
     public static void main(String[] args) throws IOException {
         windowSize = args[2];
-        sliderVariable = Integer.parseInt(windowSize);
+        sliderVariable = Integer.parseInt(windowSize); // declaring the window size
         radius = sliderVariable / 2;
 
         imageFile = new File("pictures/samples/" + args[0] + ".jpg");
@@ -129,8 +174,7 @@ public class MedianFilterParallel extends RecursiveAction {
                 "pictures/median/medianParallel" + "windowSize" + sliderVariable + "_" +
                         args[1] + ".jpg");
 
-        // TODO- maybe just writing to the thing will work
-        ImageIO.write(image2, "jpg", outputfile);
+        ImageIO.write(image2, "jpg", outputfile); // writing to the file
 
     }
 }
