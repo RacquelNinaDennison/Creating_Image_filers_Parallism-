@@ -15,7 +15,7 @@ public class MedianFilterParallel extends RecursiveAction {
     static int radius;
     static BufferedImage image2 = null; // args[1]
     static int height;
-    protected static int sThreshold = 100;
+    protected static int sThreshold = 10;
     int start;
     int width;
 

@@ -1,0 +1,33 @@
+Report for serial median--------------------------------
+Time taken for mean serial : 81654 seconds at a slider value of 31
+------------------------ Width : 900 Height: 841 -----------------------------------------------
+Report for serial median--------------------------------
+Time taken for mean serial : 81786 seconds at a slider value of 31
+------------------------ Width : 900 Height: 841 -----------------------------------------------
+Report for serial median--------------------------------
+Time taken for mean serial : 800520 seconds at a slider value of 31
+------------------------ Width : 900 Height: 841 -----------------------------------------------
+Report for serial median--------------------------------
+Time taken for mean serial : 81596 seconds at a slider value of 31
+------------------------ Width : 900 Height: 841 -----------------------------------------------
+Report for serial median--------------------------------
+Time taken for mean serial : 81680 seconds at a slider value of 31
+------------------------ Width : 900 Height: 841 -----------------------------------------------
+Report for serial median--------------------------------
+Time taken for mean serial : 81878 seconds at a slider value of 31
+------------------------ Width : 900 Height: 841 -----------------------------------------------
+Report for serial median--------------------------------
+Time taken for mean serial : 81762 seconds at a slider value of 31
+------------------------ Width : 900 Height: 841 -----------------------------------------------
+Report for serial median--------------------------------
+Time taken for mean serial : 81508 seconds at a slider value of 31
+------------------------ Width : 900 Height: 841 -----------------------------------------------
+Report for parallel median--------------------------------
+Time  : 45.418 seconds at a slider value of 31
+----------- Threshold Value 841 Width : 900 Height: 841 -----------------------------------------------
+Report for parallel median--------------------------------
+Time  : 45.522 seconds at a slider value of 31
+----------- Threshold Value 841 Width : 900 Height: 841 -----------------------------------------------
+Report for parallel median--------------------------------
+Time  : 44.623 seconds at a slider value of 31
+----------- Threshold Value 841 Width : 900 Height: 841 -----------------------------------------------

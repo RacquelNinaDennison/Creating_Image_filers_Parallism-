@@ -13,7 +13,7 @@ public class MeanFilterParallel extends RecursiveAction {
     static int sliderVariable = 0;
     static int radius = 0;
     static BufferedImage image2 = null; // args[1]
-    protected static int sThreshold = 100;
+    protected static int sThreshold = 10;
     int start;
     static int height;
     int width;
@@ -98,7 +98,7 @@ public class MeanFilterParallel extends RecursiveAction {
                 + " at a slider value of "
                 + sliderVariable + '\n' + "------------------------"
                 + " Width : " + image.getWidth() + " Height: " + image.getHeight() +
-                " -----------------------------------------------" + '\n');
+                " ----------------------------Threshold 10-------------------" + '\n');
         Files.write(Paths.get(oFile), timeTaken.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
     }
 

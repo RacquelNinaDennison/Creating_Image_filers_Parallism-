@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Aug 11 22:39:21 2022
+# Make data base, printed on Sat Aug 13 15:55:48 2022
 
 # Variables
 
@@ -15,7 +17,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # automatic
 ?F = $(notdir $?)
 # environment
-WSLENV = ELECTRON_RUN_AS_NODE/w:
+WSLENV = VSCODE_WSL_EXT_LOCATION/up
 # default
 .SHELLFLAGS := -c
 # automatic
@@ -31,7 +33,7 @@ SHELL = /bin/sh
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
 # environment
-_ = /mnt/c/Users/racqu/AppData/Local/Programs/Microsoft VS Code/bin/code
+_ = /home/racquel/.vscode-server/bin/6d9b74a70ca9c7733b29f0456fd8195364076dda/node
 # makefile (from 'makefile', line 1)
 MAKEFILE_LIST :=  makefile
 # 'override' directive
@@ -51,7 +53,7 @@ XDG_RUNTIME_DIR = /mnt/wslg/runtime-dir
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-7b116d86-9c21-4dc9-9570-fc369b799aa8.sock
+VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-25962e8d-5d6f-49f9-a97f-1a27e044e33a.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -69,7 +71,7 @@ JAVA = /usr/bin/java
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/11991_interop
+WSL_INTEROP = /run/WSL/30_interop
 # environment
 PULSE_SERVER = /mnt/wslg/PulseServer
 # makefile (from 'makefile', line 11)
@@ -97,7 +99,7 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-SHLVL = 1
+SHLVL = 0
 # makefile (from 'makefile', line 7)
 BINDIR = bin
 # default
@@ -107,7 +109,7 @@ USER = racquel
 # makefile
 .DEFAULT_GOAL := default
 # environment
-NAME = Code
+NAME = RacquelsPc
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -275,12 +277,10 @@ run-test: bin/MeanFilterParallel.class bin/MeanFilterSerial.class bin/MedianFilt
 .java:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
-make: *** No rule to make target 'all'.  Stop.
-
 #  File has not been updated.
 
 # Not a target:
+ 
 bin/MeanFilterSerial.class:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -322,6 +322,6 @@ run-medianSerial: bin/MeanFilterParallel.class bin/MeanFilterSerial.class bin/Me
 # strcache performance: lookups = 73 / hit rate = 53%
 # hash-table stats:
 # Load=34/8192=0%, Rehash=0, Collisions=3/73=4%
-# Finished Make data base on Thu Aug 11 22:39:21 2022
+# Finished Make data base on Sat Aug 13 15:55:48 2022
 
  

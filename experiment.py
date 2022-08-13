@@ -15,9 +15,9 @@ root = pathlib.Path(__file__).resolve()
 root = root.parents[1]
 
 def experiment():
-    for ds in ['medianSerial','medianParallel','meanSerial','meanParallel']:
-        for i in ['example2','example4']:
-            for j in ['9','11','21']:
+    for ds in ['meanParallel']:
+        for i in ['largeImage','smallImage']:
+            for j in ['9','11','21','31']:
                 os.system(f'make run-{ds} ARGS="{i} {i}{j} {j}"')
               
               
