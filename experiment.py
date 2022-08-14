@@ -16,7 +16,7 @@ root = root.parents[1]
 
 def experiment():
     for ds in ['meanParallel','meanSerial','medianParallel','medianSerial']:
-        for i in ['largeImage','smallImage']:
+        for i in ['nature','smallImage']:
             for j in ['9','11','21','31']:
                 os.system(f'make run-{ds} ARGS="{i} {i}{j} {j}"')
               
