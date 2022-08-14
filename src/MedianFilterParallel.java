@@ -142,7 +142,6 @@ public class MedianFilterParallel extends RecursiveAction {
     public static void mean(BufferedImage image) throws IOException {
 
         height = image.getHeight();
-        sThreshold = height;
         MedianFilterParallel fb = new MedianFilterParallel(image.getWidth(), 0);
         ForkJoinPool pool = new ForkJoinPool();
         long startTime = System.currentTimeMillis();
